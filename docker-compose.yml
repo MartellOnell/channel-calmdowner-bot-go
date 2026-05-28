@@ -1,0 +1,12 @@
+services:
+  bot:
+    build: .
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - DB_PATH=/data/bot_data.db
+      - CHECK_INTERVAL=${CHECK_INTERVAL:-3600}
+    volumes:
+      - bot_data:/data
+
+volumes:
+  bot_data:
